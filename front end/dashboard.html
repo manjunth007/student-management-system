@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i data-feather="book-open"></i>
+                <h2>Student Mgmt.</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="dashboard"><i data-feather="home"></i><span>Dashboard</span></a>
+                <a href="#" class="nav-item" data-section="students"><i data-feather="users"></i><span>Students</span></a>
+                <a href="#" class="nav-item" data-section="faculty"><i data-feather="briefcase"></i><span>Faculty</span></a>
+                <a href="#" class="nav-item" data-section="classes"><i data-feather="book"></i><span>Classes</span></a>
+                <a href="#" class="nav-item" data-section="attendance"><i data-feather="calendar"></i><span>Attendance</span></a>
+                <a href="#" class="nav-item" data-section="grades"><i data-feather="award"></i><span>Grades</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content-wrapper">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-wrapper">
+                    <i data-feather="search"></i>
+                    <input type="text" placeholder="Search for students, faculty, classes...">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="icon-button">
+                        <i data-feather="bell"></i>
+                    </button>
+                    <a href="login.html" class="icon-button" title="Logout">
+                        <i data-feather="log-out"></i>
+                    </a>
+                    <div class="profile-dropdown">
+                        <img src="https://i.pravatar.cc/40?u=admin" alt="Admin Avatar" class="avatar">
+                        <span>Admin Name</span>
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="page-content">
+                <!-- Dashboard Section -->
+                <div id="dashboard-section" class="content-section">
+                <!-- Welcome Header -->
+                <div class="welcome-header">
+                    <h2>Welcome Back, Admin!</h2>
+                    <p>Here's a snapshot of your school's performance today.</p>
+                </div>
+
+                <!-- Module 1: Main Overview -->
+                <section class="module">
+                    <div class="module-header">
+                        <h3>Main Overview</h3>
+                    </div>
+                    <div class="dashboard-grid">
+                        <!-- KPI Cards -->
+                        <div class="kpi-card kpi-students">
+                            <div class="card-icon"><i data-feather="users"></i></div>
+                            <div class="card-content">
+                                <span class="card-title">Total Students</span>
+                                <span class="card-value">1,250</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card kpi-courses">
+                            <div class="card-icon"><i data-feather="book-open"></i></div>
+                            <div class="card-content">
+                                <span class="card-title">Active Courses</span>
+                                <span class="card-value">84</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card kpi-faculty">
+                            <div class="card-icon"><i data-feather="briefcase"></i></div>
+                            <div class="card-content">
+                                <span class="card-title">Faculty Count</span>
+                                <span class="card-value">76</span>
+                            </div>
+                        </div>
+
+                        <!-- Enrollment Trend Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h4>Student Enrollment Trend</h4>
+                                <span class="chart-timespan">Last 6 Months</span>
+                            </div>
+                            <div class="chart-placeholder">
+                                <!-- In a real app, a JS chart library would render here -->
+                                <img src="https://i.imgur.com/g2S3v1T.png" alt="A line chart showing student enrollment trend" style="width: 100%; height: 100%; object-fit: contain;">
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity Feed -->
+                        <div class="activity-feed">
+                            <h4 class="feed-title">Recent Activity</h4>
+                            <ul>
+                                <li class="feed-item">
+                                    <div class="feed-icon"><i data-feather="user-plus"></i></div>
+                                    <p>New student <strong>Alice Johnson</strong> was enrolled in Grade 10.</p>
+                                    <time>2m ago</time>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-icon"><i data-feather="file-text"></i></div>
+                                    <p><strong>Dr. Smith</strong> updated grades for the 'Physics 101' course.</p>
+                                    <time>1h ago</time>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-icon"><i data-feather="dollar-sign"></i></div>
+                                    <p>Fee payment of $1,200 received from <strong>Bob Williams</strong>.</p>
+                                    <time>3h ago</time>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-icon"><i data-feather="user-check"></i></div>
+                                    <p>Attendance for 'Chemistry Lab' was marked by <strong>Ms. Davis</strong>.</p>
+                                    <time>Yesterday</time>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                </div>
+
+                <!-- Students Section -->
+                <div id="students-section" class="content-section" style="display: none;">
+                <!-- Module 2: Student Directory -->
+                <section class="module">
+                    <div class="module-header">
+                        <h3>Student Directory</h3>
+                        <div class="module-actions">
+                            <button class="btn-secondary"><i data-feather="filter"></i> Filter</button>
+                            <button class="btn-primary"><i data-feather="plus"></i> Add New Student</button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>ID</th>
+                                    <th>Grade Level</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="user-cell"><img src="https://i.pravatar.cc/40?u=a" alt="Avatar" class="avatar"><span>Alice Johnson</span></div></td>
+                                    <td>#STU-001</td>
+                                    <td>10</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td><button class="icon-button"><i data-feather="more-vertical"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="user-cell"><img src="https://i.pravatar.cc/40?u=b" alt="Avatar" class="avatar"><span>Bob Williams</span></div></td>
+                                    <td>#STU-002</td>
+                                    <td>11</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td><button class="icon-button"><i data-feather="more-vertical"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="user-cell"><img src="https://i.pravatar.cc/40?u=c" alt="Avatar" class="avatar"><span>Charlie Brown</span></div></td>
+                                    <td>#STU-003</td>
+                                    <td>9</td>
+                                    <td><span class="status-badge inactive">Inactive</span></td>
+                                    <td><button class="icon-button"><i data-feather="more-vertical"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Module 3: Student Profile Detail -->
+                <section class="module">
+                    <div class="module-header">
+                        <h3>Student Profile Detail</h3>
+                    </div>
+                    <div class="profile-grid">
+                        <!-- Left Side: Bio -->
+                        <div class="profile-bio-card">
+                            <img src="https://i.pravatar.cc/100?u=a" alt="Student Avatar" class="profile-avatar">
+                            <h3>Alice Johnson</h3>
+                            <p class="profile-id">Student ID: #STU-001</p>
+                            <div class="divider"></div>
+                            <h4>Contact Information</h4>
+                            <p><strong>Email:</strong> alice.j@example.com</p>
+                            <p><strong>Phone:</strong> (555) 123-4567</p>
+                            <h4>Guardian Information</h4>
+                            <p><strong>Name:</strong> Sarah Johnson</p>
+                            <p><strong>Relation:</strong> Mother</p>
+                        </div>
+                        <!-- Right Side: Tabs -->
+                        <div class="profile-details-card">
+                            <div class="tabs">
+                                <button class="tab-item active" data-tab="academic">Academic Records</button>
+                                <button class="tab-item" data-tab="attendance">Attendance History</button>
+                                <button class="tab-item" data-tab="fees">Fee Status</button>
+                            </div>
+                            <div class="tab-content-container">
+                                <div id="academic" class="tab-content">
+                                    <h4>Academic Performance</h4>
+                                    <p><strong>GPA:</strong> 3.8/4.0</p>
+                                    <p><strong>Class Rank:</strong> 5th of 120</p>
+                                    <p>Recent Grades: Math (A), Physics (B+), English (A-)</p>
+                                </div>
+                                <div id="attendance" class="tab-content" style="display: none;">
+                                    <h4>Attendance Overview</h4>
+                                    <p><strong>Attendance Rate:</strong> 96%</p>
+                                    <p><strong>Days Present:</strong> 145</p>
+                                    <p><strong>Days Absent:</strong> 6 (2 Excused)</p>
+                                </div>
+                                <div id="fees" class="tab-content" style="display: none;">
+                                    <h4>Financial Status</h4>
+                                    <p><strong>Tuition Status:</strong> <span style="color: #10B981;">Paid</span></p>
+                                    <p><strong>Next Payment Due:</strong> Nov 15, 2023 ($1,200)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                </div>
+
+                <!-- Faculty Section -->
+                <div id="faculty-section" class="content-section" style="display: none;">
+                    <div class="welcome-header">
+                        <h2>Faculty Management</h2>
+                        <p>Manage your teaching staff and departments.</p>
+                    </div>
+                    <section class="module">
+                        <div class="module-header">
+                            <h3>Faculty Directory</h3>
+                            <button class="btn-primary"><i data-feather="plus"></i> Add Faculty</button>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>ID</th>
+                                        <th>Department</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="user-cell"><img src="https://i.pravatar.cc/40?u=d" alt="Avatar" class="avatar"><span>Dr. Sarah Smith</span></div></td>
+                                        <td>#FAC-001</td>
+                                        <td>Physics</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td><button class="icon-button"><i data-feather="more-vertical"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="user-cell"><img src="https://i.pravatar.cc/40?u=e" alt="Avatar" class="avatar"><span>Mr. John Doe</span></div></td>
+                                        <td>#FAC-002</td>
+                                        <td>Mathematics</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td><button class="icon-button"><i data-feather="more-vertical"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Classes Section -->
+                <div id="classes-section" class="content-section" style="display: none;">
+                    <div class="welcome-header">
+                        <h2>Class Management</h2>
+                        <p>Overview of active classes and schedules.</p>
+                    </div>
+                    <section class="module">
+                        <div class="dashboard-grid">
+                            <div class="kpi-card">
+                                <div class="card-icon"><i data-feather="book"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Physics 101</span>
+                                    <span class="card-value">Grade 10</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="card-icon"><i data-feather="book"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Calculus I</span>
+                                    <span class="card-value">Grade 11</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="card-icon"><i data-feather="book"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">World History</span>
+                                    <span class="card-value">Grade 9</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Attendance Section -->
+                <div id="attendance-section" class="content-section" style="display: none;">
+                    <div class="welcome-header">
+                        <h2>Attendance</h2>
+                        <p>Track student attendance records.</p>
+                    </div>
+                    <section class="module">
+                        <div class="module-header">
+                            <h3>Today's Attendance</h3>
+                        </div>
+                        <div class="table-container">
+                            <p style="padding: 24px; color: var(--text-secondary);">Attendance data visualization would go here.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Grades Section -->
+                <div id="grades-section" class="content-section" style="display: none;">
+                    <div class="welcome-header">
+                        <h2>Grades & Assessments</h2>
+                        <p>Manage student grades and report cards.</p>
+                    </div>
+                    <section class="module">
+                        <div class="module-header">
+                            <h3>Recent Submissions</h3>
+                        </div>
+                        <div class="table-container">
+                            <p style="padding: 24px; color: var(--text-secondary);">Gradebook interface would go here.</p>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

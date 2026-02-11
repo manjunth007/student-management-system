@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Student Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <div class="page-container">
+        <div class="registration-container">
+            <div class="registration-header">
+                <h1>Create Your Account</h1>
+                <p>Join the platform to manage your student journey.</p>
+            </div>
+            <hr class="divider">
+            <form id="signup-form" class="registration-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <div class="input-wrapper">
+                        <i data-feather="user"></i>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i data-feather="mail"></i>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <div class="input-wrapper">
+                        <i data-feather="book-open"></i>
+                        <select id="course" name="course" required style="width: 100%; padding: 12px 12px 12px 40px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-family: var(--font-family); font-size: 1rem; appearance: none; background-color: white;">
+                            <option value="" disabled selected>Select your course</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BCOM">BCOM</option>
+                            <option value="BBA">BBA</option>
+                        </select>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i data-feather="lock"></i>
+                        <input type="password" id="password" name="password" placeholder="8+ characters" required>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <i data-feather="lock"></i>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div id="form-error" class="error-message" style="text-align: center;"></div>
+
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+            <div class="login-redirect">
+                <p>Already have an account? <a href="login.html">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="signup.js"></script>
+</body>
+</html>
